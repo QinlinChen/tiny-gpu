@@ -59,9 +59,11 @@ module controller #(
                 mem_write_address[i] <= 0;
                 mem_write_data[i] <= 0;
                 mem_read_address[i] <= 0;
-                consumer_read_data[i] <= 0;
                 current_consumer[i] <= 0;
                 controller_state[i] <= 0;
+            end
+            for (int i = 0 ; i < NUM_CONSUMERS; i = i + 1) begin
+                consumer_read_data[i] <= 0;
             end
 
             channel_serving_consumer = 0;
